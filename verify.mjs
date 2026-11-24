@@ -51,7 +51,7 @@ for (let k = 0; k < 40000; k++) {
     kolla(typeof p.fraga === "string" && p.fraga.length > 15, "tom eller kort fråga", p);
     kolla(typeof p.text === "string" && p.text.length > 15, "saknar förklaring", p);
     kolla(p.tecken === (p.slag === "dubbelt" ? "×2" : "½"), "fel tecken på nivån", p);
-    kolla(p.fraga.indexOf(G.TALORD[p.bas]) >= 0, "frågan nämner inte antalet", p);
+    kolla(p.fraga.indexOf(p.bas === 1 ? "en nöt" : G.TALORD[p.bas] + " nötter") >= 0, "frågan nämner inte antalet rätt", p);
     kolla(p.text.indexOf(G.TALORD[p.ratt]) >= 0, "förklaringen nämner inte svaret", p);
   }
 }

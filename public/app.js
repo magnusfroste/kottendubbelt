@@ -15,16 +15,19 @@
   var TALORD = ["noll", "ett", "två", "tre", "fyra", "fem", "sex",
     "sju", "åtta", "nio", "tio", "elva", "tolv"];
 
+  /* "en nöt", inte "ett nöt" – räknarordet böjs efter substantivet */
+  function antalsord(n) { return n === 1 ? "en" : TALORD[n]; }
+
   var SLAG = {
     dubbelt: {
       tecken: "×2",
       fraga: function (bas) {
-        return "Kotten har " + TALORD[bas] + (bas === 1 ? " nöt" : " nötter") +
+        return "Kotten har " + antalsord(bas) + (bas === 1 ? " nöt" : " nötter") +
           ". Vilken hög har dubbelt så många?";
       },
       svar: function (bas) { return bas * 2; },
       text: function (bas, ratt) {
-        return "Dubbelt så många som " + TALORD[bas] + " är " + TALORD[ratt] + ".";
+        return "Dubbelt så många som " + antalsord(bas) + " är " + TALORD[ratt] + ".";
       }
     },
     halften: {
@@ -186,7 +189,7 @@
       return {
         vb: [620, 1160], liggande: false,
         kort: { w: 560, h: 290, x: 310, ys: [200, 508, 816] },
-        r: 24, högY: 118, siffraY: -14,
+        r: 24, högY: 118, siffraY: -20,
         kotten: { x: 110, y: 96, s: 118 }, basHög: { x: 330, y: 96, r: 19 },
         chip: { x: 520, y: 96 }
       };
@@ -194,7 +197,7 @@
     return {
       vb: [900, 440], liggande: true,
       kort: { w: 252, h: 258, x: 168, ys: [176, 176, 176] },
-      r: 20, högY: 118, siffraY: -12,
+      r: 20, högY: 118, siffraY: -18,
       kotten: { x: 62, y: 88, s: 96 }, basHög: { x: 350, y: 88, r: 18 },
       chip: { x: 720, y: 88 }
     };
