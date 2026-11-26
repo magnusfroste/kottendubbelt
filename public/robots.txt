@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://kottendubbelt.skolappar.com/sitemap.xml
+Sitemap: https://kottendubbelt.skolappar.org/sitemap.xml
